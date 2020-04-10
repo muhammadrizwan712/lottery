@@ -11,6 +11,8 @@
 |
 */
 
+ Route::get('shareandinvite/{id}', 'Auth\RegisterController@share');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -48,3 +50,4 @@ Route::get('getprize/lotry/{id}','TransectionController@getPrize')->name('get.pr
 //users list
 Route::get('getalluser','UserController@getUser')->name('get.users');
 
+Route::get('withdrawinfo','UserController@infoWithdraw')->name('info.withdraw');

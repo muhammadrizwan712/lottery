@@ -4,9 +4,11 @@
                 <p class="phonenum"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 0300 6286318 jazcash</p>
                 <div class="social-icons">
                     <ul>                    
-                        <li><a href="#"><i class="facebook"> </i></a></li>
-                        <li><a href="#"><i class="twitter"> </i></a></li>
-                        <li><a href="#"><i class="google-plus"> </i></a></li>   
+                        <li><a href="https://m.facebook.com/groups/225857828488317/?_rdr"><i class="facebook"> </i></a></li>
+<a href="https://chat.whatsapp.com/CbORH6Oq09hFuLVjdhX4am">
+                       <img src="{{asset('web/images/tw.png')}}" height="35px">
+           </a>            
+                        
                                                               
                     </ul>
                 </div>

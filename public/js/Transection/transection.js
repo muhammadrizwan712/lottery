@@ -38,8 +38,8 @@ data:{id:id,name:body,_token:token},
 success:function(data){
 
 $('#myModal').modal('hide');
-//console.log(data)
-mn.text(data);
+console.log(data)
+//mn.text(data);
 
 }
 

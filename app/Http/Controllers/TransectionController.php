@@ -16,6 +16,7 @@ class TransectionController extends Controller
 
     	return view('Transection.create');
     }
+
     public function store(Request $request){
 $check=Transection::where('t_id','=',$request['tid'])->first();
   if($check){
@@ -41,7 +42,7 @@ $class->status=0;
  public function view(){
 
 
- 	$all=Transection::all();
+ 	$all=Transection::Latest()->get();
  	return view('Transection.view')->withall($all);
  }
 //lotery prize wining
@@ -50,12 +51,12 @@ public function getPrize($id){
 $user=Auth::user();
 
 
-$lotercheck=Lotery::where('id',$id)->first();
-$packcheck=Package::where('id',$lotercheck->package_id)->first();
+$lotercheck=Lotery::where('id','=',$id)->first();
+$packcheck=Package::where('id','=',$lotercheck->package_id)->first();
 
 $account=Account::where('user_id','=',$user->id)->first();
 
-if($account!=null && $account->balance>10){
+if($account!=null && $account->balance>$packcheck->name){
 $accbal=$account->balance;
 
 $final=$accbal-$packcheck->name;

@@ -116,6 +116,9 @@
                                 <li>
                                     <a href="{{route('get.withdraw')}}">Send Request</a>
                                 </li>
+                                <li>
+                                    <a href="{{route('info.withdraw')}}">Withdraw History</a>
+                                </li>
                                
                                
                             </ul>
@@ -217,7 +220,7 @@
   
        
    
-      <div class="col_3">
+      <div class="row">
            
             <div class="col-md-3 widget widget1">
                 <div class="r3_counter_box">
@@ -263,6 +266,58 @@
             
             
             <div class="clearfix"> </div>
+<hr>
+<center><h3>Lotteries Amount</h3></center>
+ 
+            <div class="col-md-3 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="pull-left fa fa-ticket user2 icon-rounded"></i>
+                    <div class="stats">
+                        
+                      <h5><strong >10Rs</strong></h5>
+                      <span style="color: red">{{$ten}}</span>
+                    </div>
+                </div>
+            </div>
+  <div class="col-md-3 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="pull-left fa fa-ticket user1 icon-rounded"></i>
+                    <div class="stats">
+                        
+                      <h5><strong >20Rs</strong></h5>
+                      <span style="color: red">{{$t}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="pull-left fa fa-ticket user2 icon-rounded"></i>
+                    <div class="stats">
+                        
+                      <h5><strong >50Rs</strong></h5>
+                      <span style="color: red">{{$f}}</span>
+                    </div>
+                </div>
+            </div><div class="col-md-3 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="pull-left fa fa-ticket user3 icon-rounded"></i>
+                    <div class="stats">
+                        
+                      <h5><strong >100Rs</strong></h5>
+                      <span style="color: red">{{$h}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="pull-left fa fa-ticket user4 icon-rounded"></i>
+                    <div class="stats">
+                        
+                      <h5><strong >500Rs</strong></h5>
+                      <span style="color: red">{{$fi}}</span>
+                    </div>
+                </div>
+            </div>
       </div>
 <hr>
 
@@ -276,6 +331,10 @@
 
     @if(Request::is('home'))
 @include('message')
+  <div class="row">
+      
+  
+
     <div class="col-md-3 widget widget1">
                 <div class="r3_counter_box">
                     <i class="pull-left fa fa-dollar user2 icon-rounded"></i>
@@ -285,7 +344,7 @@
                     </div>
                 </div>
             </div>
-      <div class="col_3">
+      
            
             <div class="col-md-3 widget widget2">
                 <div class="r3_counter_box">
@@ -298,10 +357,23 @@
                 </div>
             </div>
             
+             <div class="clearfix"> </div>
             
-            <div class="clearfix"> </div>
-      </div>
-       
+           
+  <div class="clearfix"> </div>
+
+<br>
+<center><h3 style="color: red">INVITE AND EARN MONEY</h3></center>
+<div>
+    
+<p style="background-color:whitesmoke;margin: 10px;color: #17174c">
+<b>
+<li>Is Link Ko Copy Krin Or Apny Dosto ko Is sy Signup krwae</li> <li> wo jitny paisy deposit krwaen gn </li> <li>us ka 5% ap k account mn transfer kr dia jaye ga</li> <br>
+
+
+<br>Refer Link Down Here:</b>
+<a>localhost:8000/shareandinvite/{{Auth::user()->id}}</a>
+       </div>
 <hr>
 
 <hr>

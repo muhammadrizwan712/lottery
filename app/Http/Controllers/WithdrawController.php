@@ -61,7 +61,10 @@ if($checkbalance==null){
 	return back();
 }
 else{
-if($checkbalance->balance>=$request['request']){
+
+
+
+if($checkbalance->balance>=$request['request'] && $checkbalance->balance>10){
 $obj->amount=$request['request'];
 $obj->user_id=$user->id;
 $obj->status=0;
@@ -76,7 +79,7 @@ return back();
 
 }
 else{
- Session::flash('flash_success', 'Your Dont Have Enough Amount');
+ Session::flash('flash_success', ' Sorry You cannot withdraw this amount!');
 
 	return back();
 }

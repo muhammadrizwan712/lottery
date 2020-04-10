@@ -4,13 +4,16 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Role;
+use App\ShareRefer;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Session;
 
 class RegisterController extends Controller
 {
+   public $shareid=null;
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -64,8 +67,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      $shareid=Session::get('shareid');
         
-        
+
+
+
           $user=new User();
          
             $user->name = $data['name'];
@@ -83,12 +89,27 @@ class RegisterController extends Controller
             
 
             $user->save();
-
+             Session::forget('shareid');
+if($shareid)//id mn kuh hai
+{
+$new=new ShareRefer();
+$new->user_id=$user->id;
+$new->refer_id=$shareid;
+$new->save();
+}
            
             $role = Role::where('name','user')->first();
             $user->attachRole($role->id);
         
-       
+      
         return $user;
+    }
+
+
+    protected function share($id)
+    {
+        Session::put('shareid', $id);
+
+        return view('Auth.Register');
     }
 }
